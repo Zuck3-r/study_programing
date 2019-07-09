@@ -1,2 +1,2 @@
-# study_programing
+# Study_Programing
 プログラミングの勉強したときに作成したコードをおいています。
