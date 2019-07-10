@@ -1,6 +1,6 @@
 def kan2num(str)
 
-      ans=0
+      ans=""
 
       str.gsub!(/一/, "1")
 
@@ -22,43 +22,27 @@ def kan2num(str)
 
       str =~ /((\d)?千)?((\d)?百)?((\d)?十)?(\d)?$/
 
-            if $2
-
-                  sen = $1.to_i
-
-                  ans += 1000 * sen
-
+            if $1
+                  sen = $2 || "1"
+            end
+            
+            if $3
+                  hyaku = $4 || "1"
             end
 
-            if $4
-
-                  hyaku = $4.to_i
-
-                  ans += 100 * hyaku
-
-            end
-
-            if $6
-
-                  zyuu = $6.to_i
-
-                  ans += 10 * zyuu
-
+            if $5
+                  zyu = $6 || "1"
             end
 
             if $7
-
-                  ichi = $7.to_i
-
-                  ans += 1 * ichi 
-
+                  ichi = $8
             end
+      ans = sen.to_i * 1000 + hyaku.to_i * 100 + zyu.to_i + ichi.to_i
 
-      return ans
 
 end
 
 
 
-p kan2num("四千九百二十一")
+p kan2num("千十九")
 
