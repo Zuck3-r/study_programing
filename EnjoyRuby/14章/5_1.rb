@@ -35,14 +35,11 @@ def kan2num(str)
             end
 
             if $7
-                  ichi = $8
+                  ichi = $7
             end
-      ans = sen.to_i * 1000 + hyaku.to_i * 100 + zyu.to_i + ichi.to_i
+      ans = sen.to_i * 1000 + hyaku.to_i * 100 + zyu.to_i * 10 + ichi.to_i
 
 
 end
 
-
-
-p kan2num("千十九")
-
+p kan2num("千二十三")
